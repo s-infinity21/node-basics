@@ -1,0 +1,89 @@
+.userProfileInfo .image {
+        position: relative
+    }
+    
+    .userProfileInfo .image .editImage {
+        position: absolute;
+        bottom: -27px;
+        right: 20px;
+        background: #fe5621;
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+        font-size: 1.8rem;
+        width: 54px;
+        height: 54px;
+        line-height: 54px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box
+    }
+    
+    .userProfileInfo .image .editImage:hover {
+        background: #fe693a
+    }
+    
+    .userProfileInfo .box {
+        padding: 0
+    }
+    
+    .userProfileInfo .box .info,
+    .userProfileInfo .box .name,
+    .userProfileInfo .box .socialIcons {
+        padding: 15px 20px;
+        border-bottom: 1px solid #e6e7ed
+    }
+    
+    .userProfileInfo .box .socialIcons {
+        border: 0
+    }
+    
+    .userProfileInfo .box .info>span {
+        margin: 10px 0;
+        display: block;
+        padding: 0 0 0 35px;
+        position: relative
+    }
+    
+    .userProfileInfo .box .info>span .fa {
+        position: absolute;
+        left: 5px;
+        top: 4px;
+        color: #9da2a6
+    }
+.box {
+        background: #fff;
+        padding: 30px;
+        margin: 0 0 24px 0
+    }
+    
+    .box.box-without-padding {
+        padding: 0
+    }
+    
+    .box.box-without-sidepadding {
+        padding: 8px 0
+    }
+    
+    .box.box-without-sidepadding .boxTitle {
+        margin-left: 30px
+    }
+    
+    .box.box-without-bottom-padding {
+        padding-bottom: 0
+    }
+    
+    .box .tableWrap {
+        margin: 0 -30px
+    }
+    
+    .box .table-responsive {
+        width: auto
+    }
+    
+    .box .panel-group:last-of-type {
+        margin-bottom: 0
+    }

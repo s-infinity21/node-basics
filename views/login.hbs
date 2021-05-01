@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/script.js"></script>
+  <title>Login page</title>
+</head>
+<body>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/img/back1.jpg" class="d-block w-100 carousel_img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/img/back2.png" class="d-block w-100 carousel_img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/img/back3.jfif" class="d-block w-100 carousel_img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/img/back4.jpg" class="d-block w-100 carousel_img" alt="...">
+      </div>
+    </div>
+  </div>
+
+  <div class="main" ng-app="myApp" ng-controller="myController as login">
+    <div class="login-box">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-10 offset-sm-1 col-md-8 col-lg-6 offset-md-2 offset-xl-3">
+            <form class="form" name="loginForm" action="/auth/" method="POST">
+              <h3 class="heading--form text-center">Login</h3>
+
+              <div class="form-group">
+                <label for="username">E-mail</label>
+                <input type="text" class="form-control form--input" id="username" autocomplete="off" name="email"
+                  ng-model="login.username"  required>
+                <span
+                  ng-if="loginForm.username.$touched && (loginForm.username.$error.minlength || loginForm.username.$error.maxlength || loginForm.username.$required)"
+                  class="span--error">PLEASE ENTER YOUR USERNAME CORRECTLY</span>
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control form--input" id="password" name="password"
+                ng-minlength="8" ng-maxlength="16" ng-model="login.password" required >
+                  <input class="input-check" type="checkbox" onclick="myFunction()">
+                   Show Password </div> <a href="#" class="form__forgot-password">Forgot
+                password?</a>
+
+                <div class="d-flex justify-content-center form--button">
+                  <button type="submit" class="btn btn-primary form-button" ng-disabled="loginForm.$invalid"
+                    required="true" >Submit</button></div>
+
+                <!-- This is the beginning of third party icons for login -->
+                <h3 class="heading--third-party-logins text-center">or sign in with</h3>
+                <div class="signin d-flex justify-content-center third-party-logins">
+                  <i class="fa fa-facebook-official third-party-icons" aria-hidden="true"></i>
+                  <i class="fa fa-twitter-square third-party-icons" aria-hidden="true"></i>
+                  <i class="fa fa-google third-party-icons" aria-hidden="true"></i>
+                </div>
+                <br>
+                <span class="heading--third-party-logins">New User? Not Signed in Yet? <a href="/register">Sign up now!</a> </span>
+            </form>
+            {{#if message}}
+                  <h4 class="alert alert-danger mt-4">{{message}}</h4>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

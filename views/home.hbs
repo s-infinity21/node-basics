@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeeta</title>
+    <link rel="icon" href="/assets/img/tt1.png" type="image/icon type">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/boxing-display.css">
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/home">Zeeta</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#postModal" class="nav-link" role="button" data-toggle="modal"> Ask a Query</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutus">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/auth/profile">Profile</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <p>&nbsp;</p>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <p>&nbsp;</p>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <form class="form-inline my-2 my-lg-0" action="/auth/logout" method="POST">
+                <p>&nbsp; &nbsp;</p>
+                <button type="submit" class="btn btn-outline-success my-2 my-sm-0" name="logout">LogOut</button>
+            </form>
+        </div>
+    </nav>
+
+
+        <form class="form" action="/auth/home" method="POST">
+        <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#10006;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleInputTitle">Any Title?</label>
+                            <input type="text" class="form-control" id="form__name" name="title" placeholder="Enter here">
+                            <hr>
+                            <label for="exampleInputPost">What do you want to ask?</label>
+                            <input type="text" class="form-control" id="form__name" name="posts" placeholder="Enter here">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div>
+                            <button class="btn btn-outline-success my-2 my-sm-0" data-dismiss="modal" aria-hidden="true"
+                                id="buttonPostID">Post</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <section id="services-container">
+            <div class="box">
+                <h4 class="h-secondary center">{{title}} </h4>
+                <p>{{post}} </p>
+                <form>
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default">+1</button>
+                        </div>
+                        <input class="form-control" placeholder="Add a comment.." type="text">
+                    </div>
+                </form>
+            </div>
+    </section>
+
+    <footer id="footer">
+        <div class="col-sm-6" class="row">
+            <a href="#" style="color:black">Twitter</a> <small class="text-muted">|</small> <a href="#"
+                style="color:black">Facebook</a> <small class="text-muted">|</small> <a href="#"
+                style="color:black">Google+</a>
+        </div>
+        <hr>
+        <h4 class="text-center"> ZEETA- BEYOND GREATNESS </h4>
+        <h5 class="text-right"> &#169; Copyright 2020 </h5>
+    </footer>
+
+
+    <!-- JS, Popper.js, and jQuery -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+
+
+</body>
+
+</html>

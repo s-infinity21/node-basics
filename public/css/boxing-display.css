@@ -1,0 +1,22 @@
+#services{
+    margin: 34px;
+    display:flex;
+    flex-direction: column;
+}
+#services .box{
+    border: 2px solid brown;
+    padding: 34px;
+    margin: 25px, 6px;
+    border-radius: 28px;
+    background-color: rgb(198, 229, 235);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 25px;
+}
+.h-secondary{
+    font-size: 2.3rem;
+    padding: 12px;
+    
+}
+.center{
+    text-align: center;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styler.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="/js/scriptr.js"></script>
+  <title>Registration page</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="main">
+      <div class="container" ng-app="myApp" ng-Controller="myController as registration">
+        <div class="row">
+          <div class="col-sm-12 col-md-8 col-lg-6 offset-lg-3 offset-md-2">
+            <div class="content">
+              <form name="registrationForm" novalidate action="/auth/register" method="POST">
+                <h2 class="form__heading text-center">Registration</h2>
+
+                <div class="form-group">
+                  <label for="name" class="form__label">Name</label>
+                  <input type="text" class="form-control" id="form__name" name="name" required spellcheck="false"
+                    autocomplete="off" ng-model="registration.name" required ng-keyup="registration.nameValidate()">
+                  <span class="form__span__errors" id="form__span__errors--name">
+                    enter a valid name
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="mobnum" class="form__label">Moblie Number</label>
+                  <input type="number" spellcheck="false" class="form-control" id="form__mobnum" name="mobnum" required
+                    ng-model="registration.mobnum" ng-pattern="/^[6-9][\d]{9}$/">
+                  <span class="form__span__errors" id="form__span__errors--mobnum"
+                    ng-if="registrationForm.mobnum.$touched && registrationForm.mobnum.$invalid">enter a valid phone
+                    number</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form__label">Email address</label>
+                  <input type="email" class="form-control" id="form__email" name="email" required
+                    ng-model="registration.email">
+                  <span class="form__span__errors"
+                    ng-if="registrationForm.email.$touched && registrationForm.email.$invalid">please enter a valid
+                    email</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="password" class="form__label">Password</label>
+                  <input type="password" class="form-control" name="password" required ng-model="registration.password"
+                    ng-minlength="8" ng-maxlenght="16">
+                  <span ng-if="registrationForm.password.$touched && registrationForm.password.$error.minlength"
+                    class="form__span__errors" id="form__span__error__confirmpassword">password should be of 8-16
+                    characters</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="confirm-password" class="form__label">Confirm Password</label>
+                  <input type="password" class="form-control" id="confirm-password" name="confirmPassword" required
+                    ng-model="registration.confirmpassword" ng-keyup="registration.confirmPassword()">
+                  <span class="form__span__errors" id="form__span__error__confirmpassword">passwords don't match</span>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn form__btn" disabled="disabled"
+                    ng-disabled="registrationForm.$invalid" id="btn">Submit</button>
+                </div>
+
+              </form>
+              {{#if message}}
+                  <h4 class="alert alert-danger mt-4">{{message}}</h4>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</body>
+
+</html>

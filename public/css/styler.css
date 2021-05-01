@@ -1,0 +1,153 @@
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-primary-1: #c850c0;
+  --color-primary-2: #4158d0;
+  --color-primary-3: #24243e;
+  --color-facebook-icon: #3b5998;
+  --color-twitter-icon: #38A1F3;
+  --color-google-icon: #db4a39;
+  --color-error-red: #ff0000;
+}
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6rem;
+  font-size: 1.6rem;
+}
+
+.header {
+  background-image: url("/img/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  height: 100vh;
+  position: relative;
+}
+
+.main {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  box-shadow: 0rem 3.5rem 5rem rgba(0, 0, 0, .6);
+  border-radius: .3rem;
+  background-color: var(--color-white);
+  padding: 7rem 4rem;
+}
+
+.form__heading {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+
+.form-control {
+  border: none;
+  background-color: var(--color-white);
+  outline: none;
+  font-size: inherit !important;
+  font-weight: inherit;
+  transition: all .4s;
+  border-bottom: 1px solid var(--color-primary-1);
+}
+
+
+.form-control:focus {
+  transform: scaleX(1.05);
+  border-bottom: 3px solid var(--color-primary-2);
+  outline: none;
+  box-shadow: none;
+}
+
+
+.form__span__errors {
+  color: var(--color-error-red);
+}
+
+.ng-invalid.ng-touched {
+  border-bottom: 3px solid var(--color-error-red) !important;
+}
+
+.error__border {
+  border-bottom: 3px solid var(--color-error-red) !important;
+}
+
+/* button styling */
+.form__btn {
+  color: white;
+  font-size: inherit;
+  margin-top: 1.5rem;
+  padding: 1rem 3rem;
+  background-color: var(--color-primary-1);
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.form__btn:hover {
+  color: var(--color-primary-1) !important;
+}
+
+
+.form__btn::after {
+  line-height: 1;
+  content: "";
+  height: 0%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transition: all .3s;
+  background-color: var(--color-white);
+  /* transform-origin: 0 0 ; */
+  transform: translate(-50%, -50%) rotate(45deg);
+  opacity: 0;
+
+}
+
+
+.form__btn:hover::after {
+  height: 110%;
+  background-color: var(--color-white);
+  opacity: 1;
+}
+
+.form__span__errors {
+  color: var(--color-error-red);
+}
+
+
+.btn[disabled],
+fieldset[disabled] .btn {
+  cursor: not-allowed;
+  opacity: .65;
+  filter: alpha(opacity=65);
+  box-shadow: none;
+}
+
+/* input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
