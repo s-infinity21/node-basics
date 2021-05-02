@@ -15,7 +15,7 @@ db.connect()
 
 //var sess = true;
 
-exports.register = (req, res) => {
+module.exports.register = (req, res) => {
     console.log(req.body);
     const {name, mobnum, email, password, passwordConfirm} = req.body; 
     db.query('SELECT email FROM users WHERE email = ?', [email], async (error, results) => {
@@ -50,7 +50,7 @@ exports.register = (req, res) => {
 
 }
 
-exports.login = (req,res) => {
+module.exports.login = (req,res) => {
     console.log("Users Connected");
     try {
 	  email = req.body.email
@@ -91,7 +91,7 @@ exports.login = (req,res) => {
     }
 };
 
-exports.profile = (req,res) => {
+module.exports.profile = (req,res) => {
     const GRAB_USER = `SELECT * FROM users WHERE email = ?`
       db.query(GRAB_USER, [email], async(error, results) => {
        console.log(results);
@@ -110,7 +110,7 @@ exports.profile = (req,res) => {
   });
 }
 
-exports.query = (req, res) =>{
+module.exports.query = (req, res) =>{
     console.log(req.body);
     const {q_title, q_ans} = req.body; 
     db.query("SELECT * FROM query", async (error, results) =>
@@ -141,7 +141,7 @@ exports.query = (req, res) =>{
     })
 }
 
-exports.home = (req, res) =>{
+module.exports.home = (req, res) =>{
     const GRAB_USER = `SELECT * FROM query`
       db.query(GRAB_USER, async(error, results) => {
        console.log(results);
@@ -159,7 +159,7 @@ exports.home = (req, res) =>{
   });
 }
 
-exports.logout = (req,res)=>{
+module.exports.logout = (req,res)=>{
     try{
             sess = false;
             res.redirect("/");
