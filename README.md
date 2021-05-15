@@ -1,6 +1,6 @@
 # Basic Operartions using NodeJs + Express
----
 Zeeta - A Quora like Application based project build using basic CRUD (Create Read Update Delete) operations + concept of Cookies, Sessions, Tokens, etc. in Node.js.
+
 ## Requirements
 
 For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
